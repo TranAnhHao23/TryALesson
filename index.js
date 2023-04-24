@@ -1,7 +1,10 @@
 function sendEmail() {
-    let name = document.getElementById("account_name").value;
     let phone = document.getElementById("account_phone").value;
-    let regisBranch = document.getElementById("nganh_dang_ky").value;
+    if (phone === '') {
+        alert("Số điện thoại không được để trống");
+        return;
+    }
+
     let email = 'trananhhaonuce@gmail.com'
     let subject = "Đăng ký học thử với SĐT " + phone;
     let body = "SĐT " + phone + " đã đăng ký học thử. Liên hệ sớm nhất để lấy thông tin"
@@ -17,5 +20,5 @@ function sendEmail() {
         }
     }
 
-    xhr.send(JSON.stringify({name, email, subject, body} ))
+    xhr.send(JSON.stringify({phone, email, subject, body} ))
 }
