@@ -1,4 +1,5 @@
 function sendEmail() {
+    let name = "Tran Anh Hao"
     let phone = document.getElementById("account_phone").value;
     if (phone === '') {
         alert("Số điện thoại không được để trống");
@@ -20,5 +21,5 @@ function sendEmail() {
         }
     }
 
-    xhr.send(JSON.stringify({phone, email, subject, body} ))
+    xhr.send(JSON.stringify({name, email, subject, body} ))
 }
